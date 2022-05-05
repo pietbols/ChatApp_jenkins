@@ -1,0 +1,18 @@
+version: "3.3"  # optional since v1.27.0
+services:
+  ingress:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro # -  =array    ro= read only
+      - ./frontend:/var/www/static/:ro
+    ports:
+      - 127.0.0.1:8000:80 # interne poort 8000 exposen op externe poort 80
+    depends_on:
+      - auth
+      - chat
+  auth: 
+    build: ./authAPI/.
+  chat: 
+    build: ./chatAPI/.
+
+  # mogodb: image: ...      moet niet lokaal geïnstalleerd worden (lokale client + poort exposen)

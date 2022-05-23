@@ -14,7 +14,7 @@ spec:
       containers:
       - name: chat
         imagePullPolicy: IfNotPresent
-        image: chat:latest
+        image:  pibopibopibo/jenkins:chat
         ports:
           - containerPort: 80
             name: http-web-svc

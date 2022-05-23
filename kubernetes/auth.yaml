@@ -14,7 +14,7 @@ spec:
       containers:
       - name: auth
         imagePullPolicy: IfNotPresent
-        image: auth:latest
+        image:  pibopibopibo/jenkins:auth
         ports:
           - containerPort: 80
             name: http-web-svc

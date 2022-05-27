@@ -16,7 +16,7 @@ spec:
         imagePullPolicy: IfNotPresent
         image:  pibopibopibo/jenkins:auth
         ports:
-          - containerPort: 80
+          - containerPort: 3000
             name: http-web-svc
         
 ---
